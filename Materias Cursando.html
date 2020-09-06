@@ -2338,7 +2338,6 @@
       if(document.getElementById("materia"+(i+1)).value != "")
         materias[i] = document.getElementById("materia"+(i+1)).value.toUpperCase();
     }
-    console.log(materias);
     
     var table = document.getElementById("tabla1");
     var tds = [];
@@ -2352,7 +2351,6 @@
      }
     }
 
-    console.log(tds, table.rows.length, materias[0])
     for(let i = 0; i < tds.length; i++){
       document.getElementById("tabla2").innerHTML += tds[i];
     }
@@ -2363,6 +2361,7 @@
 <table id="tabla2" cellspacing="1" cellpadding="1" border="2" bordercolordark="#333333" bordercolorlight="#666666" width="750" height="49">
   
 </table>
+<!-- fin de buscar materias -->
 
 <font face="Arial, Helvetica"> 
 <p>&nbsp;</p>
