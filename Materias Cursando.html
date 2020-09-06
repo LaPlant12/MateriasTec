@@ -2314,35 +2314,56 @@
 </tbody></table>
 <br> <br>
 
-<!-- Mi código -->
-<table id="tabla2">
-  
-</table>
+<!-- Buscar materias -->
+
+<h2>Buscar materias</h2>
+<p>Busca las materias que interesan, inserta el nombre de las materias en los campos</p>
 
 <input type="text" name="materia1" id="materia1">
 <input type="text" name="materia2" id="materia2">
-<input type="text" name="materia3" id="materia3">
+<input type="text" name="materia3" id="materia3"> <br>
 <input type="text" name="materia4" id="materia4">
 <input type="text" name="materia5" id="materia5">
-<input type="text" name="materia6" id="materia6">
+<input type="text" name="materia6" id="materia6"> <br>
 
-<button onclick="copiarTabla('tabla2')">Materias</button>
+<button onclick="copiarTabla()">Buscar</button> <br>
 
+<!-- Funcionalidad para buscar materias -->
 <script>
-  function copiarTabla(tabla){
+  function copiarTabla(){
+    document.getElementById("tabla2").innerHTML = "";
+
     var materias = [];
-    for(i=0; i<6; i++){
-      materias[i] = document.getElementById("materia"+(i+1)).value;
+    for(let i=0; i<6; i++){
+      if(document.getElementById("materia"+(i+1)).value != "")
+        materias[i] = document.getElementById("materia"+(i+1)).value.toUpperCase();
     }
     console.log(materias);
+    
+    var table = document.getElementById("tabla1");
+    var tds = [];
 
-    $(document).ready(function(){
-      $("tabla1:contains()")
-    });
+    for(let j = 0; j < materias.length; j++){
+      for(let i = 0; i < table.rows.length; i++){
+      
+      if(table.rows[i].innerHTML.search(materias[j]) != -1){
+        tds.push(table.rows[i].innerHTML);
+      }
+     }
+    }
+
+    console.log(tds, table.rows.length, materias[0])
+    for(let i = 0; i < tds.length; i++){
+      document.getElementById("tabla2").innerHTML += tds[i];
+    }
 }
 
-
 </script>
+<br>
+<table id="tabla2" cellspacing="1" cellpadding="1" border="2" bordercolordark="#333333" bordercolorlight="#666666" width="750" height="49">
+  
+</table>
+
 <font face="Arial, Helvetica"> 
 <p>&nbsp;</p>
 <p>
