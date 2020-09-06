@@ -1,2 +1,2 @@
 # MateriasTec
-Intento de agragar funcionalidad a la página que contiene todas las materias de Tec Laguna
+Funcionalidad para buscar materias en la página del Tec
